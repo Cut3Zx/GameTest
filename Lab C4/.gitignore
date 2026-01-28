@@ -1,0 +1,42 @@
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
+/[Vv]isual[Ss]tudio/
+
+# Chặn các file do IDE (Visual Studio, VS Code) sinh ra
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.db
+
+# Chặn các file cấu hình cá nhân của Unity
+/[Uu]ser[Ss]ettings/
+
+# Chặn các file hệ thống
+.DS_Store
+Thumbs.db
+
+# Chặn các file Asset Store (không nên push lên vì bản quyền và dung lượng)
+/[Aa]ssets/AssetStoreTools*
+
+# Chặn các file build sản phẩm
+/[Bb]uild/
+/[Bb]uilds/
+/Recordings/
+
+# Chặn file Crashlytics
+Firebase/m2repository/
