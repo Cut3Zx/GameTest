@@ -4,34 +4,47 @@ using UnityEngine.SceneManagement; // Thư viện để chuyển cảnh
 
 public class IntroManager : MonoBehaviour
 {
-    private VideoPlayer vp;
-    public GameObject statusText; // Kéo cái Text vào đây
+    public VideoPlayer myVideoPlayer;
+    public GameObject endUI; // Panel hiển thị khi kết thúc
 
     void Start()
     {
-        vp = GetComponent<VideoPlayer>();
-
-        // ĐĂNG KÝ SỰ KIỆN: Khi hết video thì gọi hàm EndIntro
-        vp.loopPointReached += EndIntro;
+        // Đăng ký các sự kiện
+        myVideoPlayer.prepareCompleted += OnVideoPrepared;
+        myVideoPlayer.loopPointReached += OnVideoFinished;
+        
+        // Bắt đầu nạp video
+        myVideoPlayer.Prepare();
     }
 
-    // Hàm xử lý khi kết thúc Video
-    void EndIntro(VideoPlayer source)
+    void OnVideoPrepared(VideoPlayer vp)
     {
-        Debug.Log("Video kết thúc!");
-        if (statusText != null) statusText.SetActive(false);
-        
-        // Chuyển sang màn chơi chính (Bạn cần tạo thêm Scene tên là Gameplay)
-        // SceneManager.LoadScene("Gameplay"); 
-        
-        // Hiện thông báo giả lập nếu chưa có Scene Gameplay
-        Debug.Log("Đã chuyển sang Gameplay Scene!");
+        Debug.Log("Video đã chuẩn bị xong, bắt đầu phát!");
+        vp.Play();
     }
 
-    // Hàm xử lý cho nút Skip
-    public void SkipIntro()
+    void OnVideoFinished(VideoPlayer vp)
     {
-        vp.Stop(); // Dừng video
-        EndIntro(vp); // Gọi hàm kết thúc
+        Debug.Log("Video đã chạy hết!");
+        
+        // Lựa chọn 1: Hiển thị UI
+        if(endUI != null) endUI.SetActive(true);
+        
+        // Lựa chọn 2: Chuyển Scene (Bỏ comment nếu dùng)
+        // SceneManager.LoadScene("MainGameScene");
+    }
+    public void SkipVideo()
+    {
+        Debug.Log("Người dùng đã bấm Skip!");
+        
+        // 1. Dừng video ngay lập tức
+        if (myVideoPlayer.isPlaying)
+        {
+            myVideoPlayer.Stop();
+        }
+
+        // 2. Gọi trực tiếp hàm xử lý kết thúc 
+        // (Để đảm bảo các logic như hiện UI hoặc chuyển Scene được thực thi)
+        OnVideoFinished(myVideoPlayer);
     }
 }
