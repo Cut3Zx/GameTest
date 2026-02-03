@@ -9,7 +9,7 @@ public class PlayerShooting : MonoBehaviour
     public Vector3 bulletOffset;
     private float lastBulletTime;
     public float shootingInterval;
-    // Start is called before the first frame update
+
     void Start()
     {
         

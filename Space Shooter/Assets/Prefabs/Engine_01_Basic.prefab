@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6936342617253155613}
   - component: {fileID: 3431792495059895065}
-  - component: {fileID: 1220480497995719575}
+  - component: {fileID: 267868413821284146}
   - component: {fileID: 3419803218111016832}
   - component: {fileID: 770835429233905004}
   m_Layer: 6
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1220480497995719575
+--- !u!114 &267868413821284146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flySpeed: 5
+  damage: 1
 --- !u!61 &3419803218111016832
 BoxCollider2D:
   m_ObjectHideFlags: 0

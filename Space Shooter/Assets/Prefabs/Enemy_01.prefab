@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6198875096473931398}
   - component: {fileID: 2441195536071555932}
   - component: {fileID: 681961312199570237}
-  - component: {fileID: 6935949802164047410}
+  - component: {fileID: 6038154793249158915}
+  - component: {fileID: 8382492770636659927}
   m_Layer: 7
   m_Name: Enemy_01
   m_TagString: Untagged
@@ -159,7 +160,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6935949802164047410
+--- !u!114 &6038154793249158915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,3 +174,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 4890869907775280775, guid: 37b6e309c52755546ad802df3d11c6ff,
     type: 3}
+  defaultHealthPoint: 3
+--- !u!114 &8382492770636659927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5325689573228530852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238a9e0d65801e4439ff40f5a65adbdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Heath: {fileID: 6038154793249158915}
+  damage: 1
